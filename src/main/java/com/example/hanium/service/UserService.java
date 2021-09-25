@@ -6,24 +6,30 @@ import com.example.hanium.model.User;
 import com.example.hanium.model.UserLanguage;
 import com.example.hanium.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     // 회원가입
     public void registerUser(SignupRequestDto requestDto) {
-        String name = requestDto.getName();
-        String password = requestDto.getPassword();
+        String username = requestDto.getName();
         String email = requestDto.getEmail();
         UserLanguage language = requestDto.getLanguage();
 
-        User user = new User(name, password, email, language);
+        String password = passwordEncoder.encode(requestDto.getPassword());
+
+        User user = new User(username, password, email, language);
         userRepository.save(user);
     }
+
 
     // 로그인
     public User loginUser(SignInRequestDto requestDto) {

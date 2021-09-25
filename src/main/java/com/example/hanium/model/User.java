@@ -21,7 +21,7 @@ public class User extends Timestamped {
 
     // 반드시 값 가져야 함
     @Column(nullable = false)
-    private String name;
+    private String username;
 
     @Column(nullable = false)
     private String password;
@@ -39,8 +39,8 @@ public class User extends Timestamped {
     @Column(nullable = true)
     private String img;
 
-    public User(String name, String password, String email, UserLanguage language) {
-        this.name = name;
+    public User(String username, String password, String email, UserLanguage language) {
+        this.username = username;
         this.password = password;
         this.email = email;
         this.language = language;
