@@ -31,10 +31,6 @@ public class User extends Timestamped {
 
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
-    private UserGender gender;
-
-    @Column(nullable = false)
-    @Enumerated(value = EnumType.STRING)
     private UserLanguage language;
 
     @Column(nullable = true)
@@ -43,11 +39,10 @@ public class User extends Timestamped {
     @Column(nullable = true)
     private String img;
 
-    public User(String name, String password, String email, UserGender gender, UserLanguage language) {
+    public User(String name, String password, String email, UserLanguage language) {
         this.name = name;
         this.password = password;
         this.email = email;
-        this.gender = gender;
         this.language = language;
     }
 }
