@@ -3,15 +3,14 @@ package com.example.hanium.controller;
 import com.example.hanium.dto.LoginSuccessDto;
 import com.example.hanium.dto.SignInRequestDto;
 import com.example.hanium.dto.SignupRequestDto;
+import com.example.hanium.email.service.AuthService;
 import com.example.hanium.model.User;
 import com.example.hanium.repository.UserRepository;
 import com.example.hanium.service.UserService;
-import com.example.hanium.utils.ApiUtils;
+import com.example.hanium.utils.ApiUtils.ApiResult;
+import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +22,7 @@ public class UserController {
 
     private final UserService userService;
     private final UserRepository userRepository;
+    private final AuthService authService;
 
     @GetMapping("/user/signup")
     public List<User> checkUsers() {return userRepository.findAll();}
@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping("/user/login")
-    public ApiUtils.ApiResult<LoginSuccessDto> loginUser(@RequestBody SignInRequestDto requestDto) {
+    public ApiResult<LoginSuccessDto> loginUser(@RequestBody SignInRequestDto requestDto) {
         User user = userService.loginUser(requestDto);
 
         LoginSuccessDto lsd = new LoginSuccessDto(user.getId(), user.getUsername());
@@ -43,5 +43,13 @@ public class UserController {
         }
 
         return success(lsd);
+    }
+
+    // 회원가입 인증번호 발급
+    @GetMapping("/user/verify/{requestEmail}")
+    public ApiResult<String> verify(@PathVariable("requestEmail") String requestEmail) throws NotFoundException {
+
+        authService.sendVerificationMail(requestEmail);
+        return success("성공적으로 인증메일을 보냈습니다.");
     }
 }

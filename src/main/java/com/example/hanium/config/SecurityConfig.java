@@ -1,4 +1,4 @@
-package com.example.hanium.security;
+package com.example.hanium.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
