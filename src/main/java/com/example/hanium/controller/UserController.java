@@ -25,10 +25,12 @@ public class UserController {
     private final AuthService authService;
 
     @GetMapping("/user/signup")
-    public List<User> checkUsers() {return userRepository.findAll();}
+    public List<User> checkUsers() {
+        return userRepository.findAll();
+    }
 
     @PostMapping("/user/signup")
-   public String registerUser(@RequestBody SignupRequestDto requestDto) {
+    public String registerUser(@RequestBody SignupRequestDto requestDto) {
         userService.registerUser(requestDto);
         return requestDto.getName();
     }

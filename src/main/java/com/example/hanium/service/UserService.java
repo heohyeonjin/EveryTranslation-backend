@@ -37,8 +37,6 @@ public class UserService {
         User user = null;
 
         String userEmail = requestDto.getEmail();
-        String userPassword = requestDto.getPassword();
-
         User findUser = userRepository.findByEmail(userEmail);
 
         // user 존재하지 않을경우
@@ -46,7 +44,7 @@ public class UserService {
             return user;
 
         // 비밀번호 일치 확인
-        if (findUser.getPassword().equals(userPassword)) {
+        if (passwordEncoder.matches(requestDto.getPassword(), findUser.getPassword())) {
             user = findUser;
         }
 

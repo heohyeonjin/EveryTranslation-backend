@@ -29,9 +29,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated() // anyRequest: 어떤 요청이 오든지 로그인 과정이 없으면 로그인
                 .and()
                 .formLogin()
-                .loginPage("/user/login") // 로그인이 필요할 떄 필요한 페이지의 위치 지정
-                .failureUrl("/user/login/error") // 로그인 실패했을 때 해당되는 url로 위치 지정
-                .defaultSuccessUrl("/") // 로그인이 완료되었을 때 이동할 위치 (home)
                 .permitAll() //로그인 페이지에 대해서는 허용
                 .and()
                 .logout()
