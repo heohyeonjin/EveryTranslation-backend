@@ -1,5 +1,6 @@
 package com.example.hanium.controller;
 
+import com.example.hanium.dto.SignInRequestDto;
 import com.example.hanium.dto.SignupRequestDto;
 import com.example.hanium.model.User;
 import com.example.hanium.repository.UserRepository;
@@ -21,11 +22,22 @@ public class UserController {
     private final UserRepository userRepository;
 
     @GetMapping("/user/signup")
-    public List<User> checkusers() {return userRepository.findAll();}
+    public List<User> checkUsers() {return userRepository.findAll();}
 
     @PostMapping("/user/signup")
    public String registerUser(@RequestBody SignupRequestDto requestDto) {
         userService.registerUser(requestDto);
-       return requestDto.getName();
+        return requestDto.getName();
+    }
+
+    @PostMapping("/user/login")
+    public User loginUser(@RequestBody SignInRequestDto requestDto) {
+        User user = userService.loginUser(requestDto);
+
+        if (user == null) {
+            return null;
+        }
+
+        return user;
     }
 }
