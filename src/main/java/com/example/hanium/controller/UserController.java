@@ -1,11 +1,12 @@
 package com.example.hanium.controller;
 
+import com.example.hanium.dto.LoginSuccessDto;
 import com.example.hanium.dto.SignInRequestDto;
 import com.example.hanium.dto.SignupRequestDto;
 import com.example.hanium.model.User;
 import com.example.hanium.repository.UserRepository;
 import com.example.hanium.service.UserService;
-import lombok.Getter;
+import com.example.hanium.utils.ApiUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import static com.example.hanium.utils.ApiUtils.success;
 
 @RequiredArgsConstructor
 @RestController
@@ -31,13 +34,14 @@ public class UserController {
     }
 
     @PostMapping("/user/login")
-    public User loginUser(@RequestBody SignInRequestDto requestDto) {
+    public ApiUtils.ApiResult<LoginSuccessDto> loginUser(@RequestBody SignInRequestDto requestDto) {
         User user = userService.loginUser(requestDto);
 
+        LoginSuccessDto lsd = new LoginSuccessDto(user.getId(), user.getUsername());
         if (user == null) {
             return null;
         }
 
-        return user;
+        return success(lsd);
     }
 }
