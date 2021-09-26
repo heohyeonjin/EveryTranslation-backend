@@ -25,10 +25,16 @@ dependencies {
     //redis
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.modelmapper:modelmapper:2.3.6'
+
     //mail
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
+    // security
     implementation 'org.springframework.boot:spring-boot-starter-security:2.5.4'
+
+    // websocket
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'mysql:mysql-connector-java'
