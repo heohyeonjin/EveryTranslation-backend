@@ -1,6 +1,6 @@
 package com.example.hanium.chat.model;
 
-import com.example.hanium.model.Timestamped;
+import com.example.hanium.Auth.model.Timestamped;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

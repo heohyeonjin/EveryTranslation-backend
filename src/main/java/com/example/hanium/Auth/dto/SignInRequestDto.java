@@ -1,4 +1,4 @@
-package com.example.hanium.dto;
+package com.example.hanium.Auth.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.hanium.model;
+package com.example.hanium.Auth.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

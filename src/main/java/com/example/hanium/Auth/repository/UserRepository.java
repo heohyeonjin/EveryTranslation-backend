@@ -1,6 +1,6 @@
-package com.example.hanium.repository;
+package com.example.hanium.Auth.repository;
 
-import com.example.hanium.model.User;
+import com.example.hanium.Auth.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

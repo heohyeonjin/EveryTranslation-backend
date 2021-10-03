@@ -1,16 +1,13 @@
-package com.example.hanium.service;
+package com.example.hanium.Auth.service;
 
-import com.example.hanium.dto.SignInRequestDto;
-import com.example.hanium.dto.SignupRequestDto;
-import com.example.hanium.model.User;
-import com.example.hanium.model.UserLanguage;
-import com.example.hanium.repository.UserRepository;
-import javassist.NotFoundException;
+import com.example.hanium.Auth.dto.SignInRequestDto;
+import com.example.hanium.Auth.dto.SignupRequestDto;
+import com.example.hanium.Auth.model.User;
+import com.example.hanium.Auth.model.UserLanguage;
+import com.example.hanium.Auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service

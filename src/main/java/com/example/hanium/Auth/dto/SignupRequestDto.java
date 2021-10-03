@@ -1,6 +1,6 @@
-package com.example.hanium.dto;
+package com.example.hanium.Auth.dto;
 
-import com.example.hanium.model.UserLanguage;
+import com.example.hanium.Auth.model.UserLanguage;
 import lombok.Getter;
 import lombok.Setter;
 

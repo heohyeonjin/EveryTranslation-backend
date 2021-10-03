@@ -35,6 +35,9 @@ dependencies {
     // websocket
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
 
+    // firebase sdk
+    implementation 'com.google.firebase:firebase-admin:8.0.1'
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'mysql:mysql-connector-java'

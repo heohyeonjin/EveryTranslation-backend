@@ -5,7 +5,7 @@
 2021-09-25 23:31:36- INFO  - Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interfaces.
 2021-09-25 23:31:36- INFO  - Multiple Spring Data modules found, entering strict repository configuration mode!
 2021-09-25 23:31:36- INFO  - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-09-25 23:31:36- INFO  - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.hanium.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-09-25 23:31:36- INFO  - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.hanium.Auth.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
 2021-09-25 23:31:36- INFO  - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
 2021-09-25 23:31:37- INFO  - Tomcat initialized with port(s): 8080 (http)
 2021-09-25 23:31:37- INFO  - Initializing ProtocolHandler ["http-nio-8080"]

@@ -1,12 +1,12 @@
-package com.example.hanium.controller;
+package com.example.hanium.Auth.controller;
 
-import com.example.hanium.dto.LoginSuccessDto;
-import com.example.hanium.dto.SignInRequestDto;
-import com.example.hanium.dto.SignupRequestDto;
+import com.example.hanium.Auth.dto.LoginSuccessDto;
+import com.example.hanium.Auth.dto.SignInRequestDto;
+import com.example.hanium.Auth.dto.SignupRequestDto;
 import com.example.hanium.email.service.AuthService;
-import com.example.hanium.model.User;
-import com.example.hanium.repository.UserRepository;
-import com.example.hanium.service.UserService;
+import com.example.hanium.Auth.model.User;
+import com.example.hanium.Auth.repository.UserRepository;
+import com.example.hanium.Auth.service.UserService;
 import com.example.hanium.utils.ApiUtils.ApiResult;
 import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;

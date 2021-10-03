@@ -1,4 +1,4 @@
-package com.example.hanium.model;
+package com.example.hanium.Auth.model;
 
 public enum UserLanguage {
     KOREAN,
