@@ -21,10 +21,9 @@ public class UserService {
         String username = requestDto.getName();
         String email = requestDto.getEmail();
         UserLanguage language = requestDto.getLanguage();
-
         String password = passwordEncoder.encode(requestDto.getPassword());
-
-        User user = new User(username, password, email, language);
+        String phone = requestDto.getPhone();
+        User user = new User(username, password, email, language,phone);
         userRepository.save(user);
     }
 
