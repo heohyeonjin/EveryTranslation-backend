@@ -17,6 +17,7 @@ public class User extends Timestamped {
     // ID 자동 생성 및 증가
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    @Column(name = "user_id")
     private Long id;
 
     // 반드시 값 가져야 함
