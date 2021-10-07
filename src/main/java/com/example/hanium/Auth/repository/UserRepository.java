@@ -1,12 +1,12 @@
 package com.example.hanium.Auth.repository;
 
 import com.example.hanium.Auth.model.User;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email);
-    List<User> findAll();
+
+    User findByUserId(Long userId);
 }

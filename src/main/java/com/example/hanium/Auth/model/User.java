@@ -1,10 +1,14 @@
 package com.example.hanium.Auth.model;
 
+import com.example.hanium.chat.model.Chat;
+import com.example.hanium.room.model.RoomMember;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -12,13 +16,11 @@ import javax.persistence.*;
 @Entity // DB 테이블 역할
 public class User extends Timestamped {
 
-
-
     // ID 자동 생성 및 증가
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "user_id")
-    private Long id;
+    private Long userId;
 
     // 반드시 값 가져야 함
     @Column(nullable = false)
@@ -36,6 +38,12 @@ public class User extends Timestamped {
 
     @Column(nullable = true)
     private String phone;
+
+    @OneToMany(mappedBy = "user")
+    private List<RoomMember> roomMembers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Chat> messages;
 
     public User(String username, String password, String email, UserLanguage language, String phone) {
         this.username = username;

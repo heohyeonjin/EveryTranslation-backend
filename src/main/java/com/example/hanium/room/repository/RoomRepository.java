@@ -8,6 +8,4 @@ import java.util.List;
 
 public interface RoomRepository extends JpaRepository<Room, Long> {
     Room findByRoomId(Long RoomId);
-
-    List<Room> findAllRoom();
 }
