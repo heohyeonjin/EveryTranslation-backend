@@ -11,15 +11,13 @@ import lombok.Setter;
 public class RoomDto {
     Long roomId;
     String roomName;
-    String content;
+    String recentContent;
     String recentTime;
-    UserLanguage language;
 
-    public RoomDto(Long roomId, String roomName, String content, String recentTime, UserLanguage language) {
+    public RoomDto(Long roomId, String roomName, String recentContent, String recentTime) {
         this.roomId = roomId;
         this.roomName = roomName;
-        this.content = content;
+        this.recentContent = recentContent;
         this.recentTime = recentTime;
-        this.language = language;
     }
 }
