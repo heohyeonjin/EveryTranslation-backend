@@ -1,7 +1,7 @@
 package com.example.hanium.room.model;
 
-import com.example.hanium.Auth.model.User;
 import com.example.hanium.chat.model.Chat;
+import com.example.hanium.roomMember.model.RoomMember;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,11 +25,11 @@ public class Room {
     // 채팅방 타이틀
     private String roomName;
 
-    // 채팅방 참가자
+    // 채팅방 참가자 (1 : n)
     @OneToMany(mappedBy = "room")
     private List<RoomMember> roomMembers = new ArrayList<>();
 
-    // 채팅방 내 메시지 리스트
+    // 채팅방 내 메시지 리스트(1 : n)
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     private List<Chat> messages;
 

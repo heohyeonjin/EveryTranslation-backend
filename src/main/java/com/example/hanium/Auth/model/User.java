@@ -1,7 +1,7 @@
 package com.example.hanium.Auth.model;
 
 import com.example.hanium.chat.model.Chat;
-import com.example.hanium.room.model.RoomMember;
+import com.example.hanium.roomMember.model.RoomMember;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

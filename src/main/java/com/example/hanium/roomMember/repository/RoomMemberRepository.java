@@ -1,6 +1,6 @@
-package com.example.hanium.room.repository;
+package com.example.hanium.roomMember.repository;
 
-import com.example.hanium.room.model.RoomMember;
+import com.example.hanium.roomMember.model.RoomMember;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoomMemberRepository extends JpaRepository<RoomMember, Long> {
