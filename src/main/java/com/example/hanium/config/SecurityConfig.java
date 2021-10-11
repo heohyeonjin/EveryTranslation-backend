@@ -26,6 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").permitAll()
                 //h2-console페이지 허용
                 .antMatchers("/h2-console/**").permitAll()
+                //친구추가 api 접근 허용
+                .antMatchers("/api/**").permitAll()
                 //room 페이지 허용
                 .antMatchers("/room/**").permitAll()
                 .anyRequest().authenticated() // anyRequest: 어떤 요청이 오든지 로그인 과정이 없으면 로그인
