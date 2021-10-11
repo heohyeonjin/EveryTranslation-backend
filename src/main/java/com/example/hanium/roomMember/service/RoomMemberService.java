@@ -51,6 +51,16 @@ public class RoomMemberService {
         return room.getRoomId();
     }
 
+    // userID의 특정 미팅룸 삭제
+    public Room deleteRoom(Long userId, Long roomId) {
+        User user = userRepository.findByUserId(userId);
+        Room room = roomRepository.findByRoomId(roomId);
+        RoomMember roomMember = roomMemberRepository.findByUserAndRoom(user, room);
+        roomMemberRepository.delete(roomMember);
+
+        return room;
+    }
+
     // 참가자를 미팅룸에 추가
     public void joinRoom(User user, Room room) {
         RoomMember roomMember = new RoomMember(user, room);

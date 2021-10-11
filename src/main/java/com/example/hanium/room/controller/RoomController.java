@@ -5,6 +5,7 @@ import com.example.hanium.room.model.Room;
 import com.example.hanium.room.repository.RoomRepository;
 import com.example.hanium.room.service.RoomService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

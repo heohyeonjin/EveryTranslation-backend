@@ -3,10 +3,7 @@ package com.example.hanium.roomMember.controller;
 import com.example.hanium.room.model.Room;
 import com.example.hanium.roomMember.service.RoomMemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,11 @@ public class RoomMemberController {
     @PostMapping("/room/invite/{fromId}/{toId}/{roomId}")
     public Long inviteRoom(@PathVariable("fromId") Long fromId, @PathVariable("toId") Long toId, @PathVariable("roomId") Long roomId) {
         return roomMemberService.inviteRoom(fromId, toId, roomId);
+    }
+
+    // userID의 특정 미팅룸 삭제
+    @DeleteMapping("/room/{userId}/{roomId}")
+    public Room deleteRoom(@PathVariable("userId") Long userId, @PathVariable("roomId") Long roomId) {
+        return roomMemberService.deleteRoom(userId, roomId);
     }
 }
