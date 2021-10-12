@@ -1,11 +1,10 @@
 package com.example.hanium.roomMember.controller;
 
+import com.example.hanium.friend.dto.EmailDto;
 import com.example.hanium.room.model.Room;
 import com.example.hanium.roomMember.service.RoomMemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -19,11 +18,18 @@ public class RoomMemberController {
         return roomMemberService.createRoom(userId);
     }
 
-    // 미팅상대 추가
-    @PostMapping("/room/invite/{fromId}/{toId}/{roomId}")
-    public Long inviteRoom(@PathVariable("fromId") Long fromId, @PathVariable("toId") Long toId, @PathVariable("roomId") Long roomId) {
+    // 친구 초대
+    @GetMapping("/room/invite/{fromId}/{toId}/{roomId}")
+    public boolean inviteRoom(@PathVariable("fromId") Long fromId, @PathVariable("toId") Long toId, @PathVariable("roomId") Long roomId) {
         return roomMemberService.inviteRoom(fromId, toId, roomId);
     }
+
+    // 이메일로 미팅 상대 초대
+    @PostMapping("/room/invite/{roomId}")
+    public boolean inviteRoom(@PathVariable Long roomId, @RequestBody EmailDto emailDto){
+        return roomMemberService.inviteRoomByEmail(roomId,emailDto.getEmail());
+    }
+
 
     // userID의 특정 미팅룸 삭제
     @DeleteMapping("/room/{userId}/{roomId}")

@@ -17,7 +17,7 @@ public class FriendService {
     private final FriendRepository friendRepository;
 
     //친구 추가
-//    @Transactional
+    @Transactional
     public String addFriend(long myId, String friendEmail) {
         User me = userRepository.findById(myId).orElseThrow(
                 () -> new NullPointerException("접근 오류")
