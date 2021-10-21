@@ -21,6 +21,7 @@ public class FriendController {
 
     private final FriendService friendService;
     private final UserRepository userRepository;
+
     //친구 추가
     @PostMapping("/api/friend/{myId}")
     public String addFriend(@PathVariable Long myId, @RequestBody EmailDto emailDto){
