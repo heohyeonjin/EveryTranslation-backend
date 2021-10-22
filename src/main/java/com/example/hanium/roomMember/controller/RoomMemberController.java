@@ -3,8 +3,12 @@ package com.example.hanium.roomMember.controller;
 import com.example.hanium.friend.dto.EmailDto;
 import com.example.hanium.room.model.Room;
 import com.example.hanium.roomMember.service.RoomMemberService;
+import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import com.example.hanium.utils.ApiUtils.ApiResult;
+
+import static com.example.hanium.utils.ApiUtils.success;
 
 @RequiredArgsConstructor
 @RestController
@@ -14,8 +18,9 @@ public class RoomMemberController {
 
     // 미팅 시작 버튼 -> 미팅룸 생성
     @PostMapping("/room/create/{userId}")
-    public Long createRoom(@PathVariable("userId") Long userId) {
-        return roomMemberService.createRoom(userId);
+    public ApiResult<String> createRoom(@PathVariable("userId") Long userId) {
+        roomMemberService.createRoom(userId);
+        return success("성공적으로 방을 생성했습니다.");
     }
 
     // 친구 초대
