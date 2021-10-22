@@ -40,7 +40,7 @@ public class UserController {
     public ApiResult<LoginSuccessDto> loginUser(@RequestBody SignInRequestDto requestDto) {
         User user = userService.loginUser(requestDto);
 
-        LoginSuccessDto lsd = new LoginSuccessDto(user.getUserId(), user.getUsername());
+        LoginSuccessDto lsd = new LoginSuccessDto(user.getUserId(), user.getUsername(), user.getLanguage());
         if (user == null) {
             return null;
         }
