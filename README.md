@@ -26,7 +26,11 @@ STOMP를 이용한 실시간 자동 통역 애플리케이션
 
 <br>
 
-### 사용 기술(STOMP,Redis)
+### 사용 기술
+1. STOMP
+![image](https://user-images.githubusercontent.com/72252806/184601547-7bfabe7d-7d78-4bd7-afcf-37357186276f.png)
+
+메세징 전송을 효율적으로 하기위해 STOMP를 채택하여 구독, 발행등의 매커니즘을 통해 확실하게 정의하여 개발함
 
 <br>
 
