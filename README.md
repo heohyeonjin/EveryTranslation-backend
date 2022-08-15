@@ -30,7 +30,12 @@ STOMP를 이용한 실시간 자동 통역 애플리케이션
 1. STOMP
 ![image](https://user-images.githubusercontent.com/72252806/184601547-7bfabe7d-7d78-4bd7-afcf-37357186276f.png)
 
-메세징 전송을 효율적으로 하기위해 STOMP를 채택하여 구독, 발행등의 매커니즘을 통해 확실하게 정의하여 개발함
+메세징 전송을 효율적으로 하기위해 STOMP를 채택하여 구독, 발행 등의 형식을 통해 메세지를 전송하여 처리하는 매커니즘을 확실하게 정의하여 개발함.
+
+2. Redis
+![image](https://user-images.githubusercontent.com/72252806/184601765-31846d5f-eb47-4286-a2b2-e6f7bef8a909.png)
+
+신규 사용자의 본인인증을 위해 발급되는 인증번호를 인 메모리 방식인 Redis를 통해 Key-value 데이터 구조로 저장하여 메모리 및 시간을 절약하였음
 
 <br>
 
